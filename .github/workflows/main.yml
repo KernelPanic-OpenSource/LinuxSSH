@@ -17,4 +17,4 @@ jobs:
     - name: Info
       run: curl -sL https://raw.githubusercontent.com/KernelPanic-OpenSource/LinuxSSH/master/ngrok.sh | bash
     - name: Loop
-      run: run: git clone https://github.com/KernelPanic-OpenSource/ngrok-tunneling-action loop && cd loop && chmod +x loop.sh && ./loop.sh
+      run: git clone https://github.com/KernelPanic-OpenSource/ngrok-tunneling-action loop && cd loop && chmod +x loop.sh && ./loop.sh
