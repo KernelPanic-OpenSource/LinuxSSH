@@ -7,8 +7,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Run container
-      run: |
-        docker-compose up -d 
     - uses: apogiatzis/ngrok-tunneling-action@v0.1.4
       with:
         timeout: 6h
