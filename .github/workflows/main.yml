@@ -1,20 +1,19 @@
 name: Ubuntu VPS
 on: workflow_dispatch
 jobs:
-  deploy:
-    name: Deploy challenge
+  Container:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
-      run: adduser --gecos "" --disabled-password doraemon --force-badname
-      run: chpasswd <<<"doraemon:123456"
+    - uses: actions/checkout@v2
     - uses: apogiatzis/ngrok-tunneling-action@v0.1.4
       with:
         timeout: 6h
         port: 22
         ngrok_authtoken: 1zduK1GhoyyWPe6hHsJlhR1gG9R_5TNjK9mjiKXhTaC3bBSyc
     - name: Info
+      run: adduser --gecos "" --disabled-password doraemon --force-badname
+      run: chpasswd <<<"doraemon:123456"
       run: curl -sL https://raw.githubusercontent.com/KernelPanic-OpenSource/LinuxSSH/master/ngrok.sh | bash
     - name: Loop
       run: git clone https://github.com/KernelPanic-OpenSource/ngrok-tunneling-action loop && cd loop && chmod +x loop.sh && ./loop.sh
