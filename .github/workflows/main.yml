@@ -11,7 +11,8 @@ jobs:
         echo "Loading..."
         sudo echo "adduser --gecos "" --disabled-password runner --force-badname"
         sudo echo "usermod -aG sudo runner"
-        sudo chpasswd <<< "runner:123456"
+        echo "runner:LotusOS" | sudo chpasswd
+        echo "root:LotusOS" | sudo chpasswd
     - uses: apogiatzis/ngrok-tunneling-action@v0.1.4
       with:
         timeout: 6h
