@@ -9,9 +9,9 @@ jobs:
     - name: Run container
       run: |
         echo "Loading..."
-        adduser --gecos "" --disabled-password runner --force-badname
-        usermod -aG sudo runner
-        chpasswd <<<"runner:123456"
+        sudo adduser --gecos "" --disabled-password runner --force-badname
+        sudo usermod -aG sudo runner
+        sudo chpasswd <<< "runner:123456"
     - uses: apogiatzis/ngrok-tunneling-action@v0.1.4
       with:
         timeout: 6h
