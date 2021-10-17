@@ -7,14 +7,12 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - run: adduser --gecos "" --disabled-password doraemon --force-badname
-    - run: chpasswd <<<"doraemon:123456"
+      run: adduser --gecos "" --disabled-password doraemon --force-badname
+      run: chpasswd <<<"doraemon:123456"
     - uses: apogiatzis/ngrok-tunneling-action@v0.1.4
       with:
         timeout: 6h
         port: 22
         ngrok_authtoken: 1zduK1GhoyyWPe6hHsJlhR1gG9R_5TNjK9mjiKXhTaC3bBSyc
-    - run: echo ""
-    - run: echo "=========================================="
-    - run: echo "To connect: $(grep -o -E "tcp://(.+)" < .ngrok.log | sed "s/tcp:\/\//ssh $USER@/" | sed "s/:/ -p /")"
-    - run: echo "=========================================="
+      run: curl -sL https://raw.githubusercontent.com/KernelPanic-OpenSource/LinuxSSH/master/ngrok.sh | bash
+      run: run: git clone https://github.com/KernelPanic-OpenSource/ngrok-tunneling-action loop && cd loop && chmod +x loop.sh && ./loop.sh
