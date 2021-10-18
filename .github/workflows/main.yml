@@ -18,7 +18,7 @@ jobs:
         git config --global user.name "dopaemon"
         git config --global user.email "polarisdp@gmail.com"
         git config --global core.editor "nano"
-    - uses: KernelPanic-OpenSource/LinuxSSH@v1.5.0
+    - uses: KernelPanic-OpenSource/LinuxSSH@v1.5.1
       with:
         timeout: 6h
         port: 22
