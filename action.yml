@@ -31,6 +31,8 @@ runs:
     - name: Info
       run: |
         curl -sL https://raw.githubusercontent.com/KernelPanic-OpenSource/LinuxSSH/master/ngrok.sh | bash
+      shell: bash
     - name: Loop
       run: |
         git clone https://github.com/KernelPanic-OpenSource/ngrok-tunneling-action loop && cd loop && chmod +x loop.sh && ./loop.sh
+      shell: bash
