@@ -6,7 +6,7 @@ jobs:
     container: ubuntu
     services:
       juice_shop_app:
-        image: bkimminich/juice-shop
+        image: dopaemon/bionic
         ports:
           - 80:80
           - 443:443
