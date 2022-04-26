@@ -19,7 +19,7 @@ jobs:
         apt-get install sudo -y
         echo "Loading..."
         sudo apt-get update
-        sudo apt-get install nano htop curl wget git -y
+        sudo apt-get install nano htop curl wget git unzip -y
         git config --global user.name "dopaemon"
         git config --global user.email "polarisdp@gmail.com"
         git config --global core.editor "nano"
