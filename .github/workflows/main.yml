@@ -18,10 +18,6 @@ jobs:
         apt-get update
         apt-get install sudo -y
         echo "Loading..."
-        sudo echo "adduser --gecos "" --disabled-password runner --force-badname"
-        sudo echo "usermod -aG sudo runner"
-        echo "runner:LotusOS" | sudo chpasswd
-        echo "root:LotusOS" | sudo chpasswd
         sudo apt-get update
         sudo apt-get install nano htop -y
         git config --global user.name "dopaemon"
