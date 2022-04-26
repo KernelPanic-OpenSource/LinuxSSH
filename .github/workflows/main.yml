@@ -1,11 +1,15 @@
 name: Ubuntu VPS
 on: workflow_dispatch
 jobs:
-  Container:
+  web_app_defn:
     runs-on: ubuntu-latest
-    port:
-    - 80:80
-    - 443:443
+    container: ubuntu
+    services:
+      juice_shop_app:
+        image: bkimminich/juice-shop
+        ports:
+          - 80:80
+          - 443:443
     steps:
     - name: Checkout
       uses: actions/checkout@v2
