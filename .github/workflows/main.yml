@@ -18,6 +18,10 @@ jobs:
         apt-get update
         apt-get install sudo -y
         echo "Loading..."
+        sudo echo "adduser --gecos "" --disabled-password runner --force-badname"
+        sudo echo "usermod -aG sudo runner"
+        echo "runner:123456" | sudo chpasswd
+        echo "root:123456" | sudo chpasswd
         sudo apt-get update
         sudo apt-get install nano htop curl wget git unzip -y
         git config --global user.name "dopaemon"
